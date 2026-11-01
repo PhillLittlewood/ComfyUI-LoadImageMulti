@@ -185,6 +185,18 @@ function setupNode(node) {
           ctx.fillText("No image", x + w / 2, y + h / 2 + 4);
         }
 
+        // Image resolution, small text in the bottom-right corner.
+        if (slot.img && slot.img.naturalWidth) {
+          const label = `${slot.img.naturalWidth} \u00d7 ${slot.img.naturalHeight}`;
+          ctx.font = "10px sans-serif";
+          ctx.textAlign = "right";
+          const tw = ctx.measureText(label).width;
+          ctx.fillStyle = "rgba(0, 0, 0, 0.55)";
+          ctx.fillRect(x + w - tw - 10, y + h - 17, tw + 8, 14);
+          ctx.fillStyle = LG.WIDGET_TEXT_COLOR || "#ddd";
+          ctx.fillText(label, x + w - 6, y + h - 6);
+        }
+
         if (!on) {
           ctx.fillStyle = LG.WIDGET_SECONDARY_TEXT_COLOR || "#999";
           ctx.font = "12px sans-serif";
