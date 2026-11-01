@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-loadimagemulti"
+description = "Load up to four images in one node, each with an enable checkbox and width/height outputs."
+version = "1.0.0"
+license = { text = "MIT" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/PhillLittlewood/ComfyUI-LoadImageMulti"
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "Load Image (Multi)"
+Icon = ""
